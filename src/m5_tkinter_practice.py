@@ -68,9 +68,21 @@ def main():
         else:
             print('goodbye')
 
+    second_entry_box = ttk.Entry(frame1)
+    second_entry_box.grid()
+
+    n_times_button = ttk.Button(frame1, text='input an integer')
+    n_times_button['command'] = lambda: n(my_entry_box, second_entry_box)
+    n_times_button.grid()
+
+    def n(entry_box, second_ectry_box):
+        contents = entry_box.get()
+        n = second_ectry_box.get()
+        m = int(n)
+        print(m * contents)
 
     # ------------------------------------------------------------------
-    # TODO: 7.
+    # DONE: 7.
     #    -- Put a second Entry on the Frame.
     #    -- Put a third Button on the frame.
     #    -- Make this new Button respond to a button-press as follows:
@@ -94,9 +106,10 @@ def main():
     ####################################################################
 
     # ------------------------------------------------------------------
-    # TODO: 8. As time permits, do other interesting GUI things!
-    # ------------------------------------------------------------------
+    # DONE: 8. As time permits, do other interesting GUI things!
+    # ----------------------------------------------------------
     root.mainloop()
+
 
 
 # ----------------------------------------------------------------------
